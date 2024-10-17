@@ -16,7 +16,8 @@ export async function fetchRssFeed(source: SourceCategory): Promise<Article[]> {
     const parse = parserKey ? parsers[parserKey] : null;
 
     if (parse) {
-      return parse(result, source);
+      const articles = parse(result, source);
+      return articles;
     } else {
       throw new Error("No parser found for this URL");
     }
