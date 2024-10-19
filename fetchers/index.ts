@@ -106,4 +106,189 @@ export const sourceCategories: SourceCategory[] = [
     category_id: 1,
     source_id: 4,
   },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    category_id: 1,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    category_id: 3,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    category_id: 9,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/PersonalTech.xml",
+    category_id: 9,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+    category_id: 11,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+    category_id: 8,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+    category_id: 6,
+    source_id: 5,
+  },
+  {
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+    category_id: 6,
+    source_id: 5,
+  },
+  {
+    url: "https://www.theguardian.com/world/rss",
+    category_id: 1,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/uk/business/rss",
+    category_id: 3,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/lifeandstyle/health-and-wellbeing/rss",
+    category_id: 6,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/science/rss",
+    category_id: 8,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/technology/rss",
+    category_id: 9,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/culture/rss",
+    category_id: 10,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/sport/rss",
+    category_id: 11,
+    source_id: 6,
+  },
+  {
+    url: "https://www.theguardian.com/travel/rss",
+    category_id: 12,
+    source_id: 6,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/latest.xml",
+    category_id: 2,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/world.xml",
+    category_id: 1,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/politics.xml",
+    category_id: 5,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/science.xml",
+    category_id: 8,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/health.xml",
+    category_id: 6,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/sports.xml",
+    category_id: 11,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/travel.xml",
+    category_id: 12,
+    source_id: 7,
+  },
+  {
+    url: "https://moxie.foxnews.com/google-publisher/tech.xml",
+    category_id: 9,
+    source_id: 7,
+  },
+  {
+    url: "https://nypost.com/politics/feed/",
+    category_id: 5,
+    source_id: 8,
+  },
+  {
+    url: "https://nypost.com/world-news/feed/",
+    category_id: 1,
+    source_id: 8,
+  },
+  {
+    url: "https://nypost.com/sports/feed/",
+    category_id: 11,
+    source_id: 8,
+  },
+  {
+    url: "https://nypost.com/business/feed/",
+    category_id: 3,
+    source_id: 8,
+  },
+  {
+    url: "https://nypost.com/entertainment/feed/",
+    category_id: 10,
+    source_id: 8,
+  },
+  {
+    url: "https://nypost.com/tech/feed/",
+    category_id: 9,
+    source_id: 8,
+  },
+  {
+    url: "https://www.dailymail.co.uk/home/index.rss",
+    category_id: 2,
+    source_id: 9,
+  },
+  {
+    url: "https://www.dailymail.co.uk/sport/index.rss",
+    category_id: 11,
+    source_id: 9,
+  },
+  {
+    url: "https://www.dailymail.co.uk/tvshowbiz/index.rss",
+    category_id: 10,
+    source_id: 9,
+  },
+  {
+    url: "https://www.dailymail.co.uk/health/index.rss",
+    category_id: 6,
+    source_id: 9,
+  },
+  {
+    url: "https://www.dailymail.co.uk/sciencetech/index.rss",
+    category_id: 8,
+    source_id: 9,
+  },
+  {
+    url: "https://www.dailymail.co.uk/money/index.rss",
+    category_id: 3,
+    source_id: 9,
+  },
+  {
+    url: "https://www.dailymail.co.uk/travel/index.rss",
+    category_id: 12,
+    source_id: 9,
+  },
 ];

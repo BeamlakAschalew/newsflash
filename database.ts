@@ -9,7 +9,6 @@ const poolConfig: mysql.PoolOptions = {
   user: process.env.DATABASE_USERNAME,
   database: process.env.DATABASE_NAME,
   password: process.env.DATABASE_PASSWORD,
-  localAddress: process.env.DATABASE_REQUEST_IP,
   waitForConnections: true,
   connectionLimit: 0,
   maxIdle: 10,

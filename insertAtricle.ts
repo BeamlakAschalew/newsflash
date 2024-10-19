@@ -24,8 +24,8 @@ async function insertArticle(article: Article): Promise<void> {
           return reject(err);
         }
         const r = results as any;
-        if (r[0][0].status === 200)
-          console.log("Article inserted successfully");
+
+        console.log(r[0][0].status);
 
         resolve();
       }
