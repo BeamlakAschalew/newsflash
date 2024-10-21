@@ -291,4 +291,289 @@ export const sourceCategories: SourceCategory[] = [
     category_id: 12,
     source_id: 9,
   },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/index",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/technology-lab",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/gadgets",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/tech-policy",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/apple",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/gaming",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/science",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://feeds.arstechnica.com/arstechnica/cars",
+    category_id: 9,
+    source_id: 10,
+  },
+  {
+    url: "https://www.buzzfeed.com/index.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/raw.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/usnews.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/quiz.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/animals.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/books.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/celebrity.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/tvandmovies.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/puzzles.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/tech.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/sports.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/world.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.buzzfeed.com/music.xml",
+    category_id: 10,
+    source_id: 11,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-topstories",
+    category_id: 2,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-world",
+    category_id: 1,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-politics",
+    category_id: 5,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-business",
+    category_id: 3,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-health",
+    category_id: 6,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-arts",
+    category_id: 10,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-technology",
+    category_id: 9,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbc.ca/webfeed/rss/rss-sports",
+    category_id: 11,
+    source_id: 12,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/main",
+    category_id: 2,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/politics",
+    category_id: 5,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/world",
+    category_id: 1,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/health",
+    category_id: 6,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/moneywatch",
+    category_id: 3,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/science",
+    category_id: 8,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/technology",
+    category_id: 9,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbsnews.com/latest/rss/entertainment",
+    category_id: 10,
+    source_id: 13,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/boxing",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/golf",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/nba",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/mma",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/mlb",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/nfl",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/nhl",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/soccer",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/tennis",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.cbssports.com/rss/headlines/wwe",
+    category_id: 11,
+    source_id: 14,
+  },
+  {
+    url: "https://www.engadget.com/rss.xml",
+    category_id: 9,
+    source_id: 15,
+  },
+  {
+    url: "https://www.etonline.com/news/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/tv/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/style/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/style/fashion/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/style/lifestyle/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/style/shopping/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/music/rss",
+    category_id: 10,
+    source_id: 16,
+  },
+  {
+    url: "https://www.etonline.com/movies/rss",
+    category_id: 10,
+    source_id: 16,
+  },
 ];

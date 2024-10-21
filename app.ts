@@ -7,18 +7,14 @@ import { saveArticles } from "./insertAtricle";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware (optional, e.g., for JSON parsing)
 app.use(express.json());
 
-// Basic route for testing
 app.get("/", (req, res) => {
   res.send("RSS Feed Fetcher is running!");
 });
 
-// Start the Express server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-  // Cron job to fetch articles every 10 minutes
   console.log("Cron ready to run");
   cron.schedule("*/10 * * * *", () => {
     console.log("Running scheduled task to fetch articles...");

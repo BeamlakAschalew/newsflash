@@ -139,6 +139,107 @@ const parseDailyMail = (result: any, source: SourceCategory): Article[] => {
   }));
 };
 
+const parseArsTechnica = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image:
+      item["media:content"]?.[0]?.$.url ||
+      item["media:thumbnail"]?.[0]?.$.url ||
+      item["enclosure"]?.[0]?.$.url ||
+      null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseBuzzFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:thumbnail"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseCBC = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0]?.replace(/<img.*?>/, "") || null,
+    link: item.link?.[0] || null,
+    image: item.description?.[0]?.match(/<img src='(.*?)'/)?.[1] || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseCBS = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0]?.replace(/<[^>]+>/g, "") || null,
+    link: item.link?.[0] || null,
+    image: item.image?.[0] || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseCBSSports = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0]?.replace(/<[^>]+>/g, "") || null,
+    link: item.link?.[0] || null,
+    image: item.enclosure?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseEngadget = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0]?.["_"].replace(/<[^>]+>/g, "") || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    link: item.link?.[0] || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseETOnline = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
 export const parsers: Record<
   string,
   (result: any, source: SourceCategory) => Article[]
@@ -152,4 +253,11 @@ export const parsers: Record<
   "moxie.foxnews.com": parseFoxNews,
   "nypost.com": parseNYPost,
   "dailymail.co.uk": parseDailyMail,
+  "arstechnica.com": parseArsTechnica,
+  "buzzfeed.com": parseBuzzFeed,
+  "cbc.ca": parseCBC,
+  "cbsnews.com": parseCBS,
+  "cbssports.com": parseCBSSports,
+  "engadget.com": parseEngadget,
+  "etonline.com": parseETOnline,
 };
