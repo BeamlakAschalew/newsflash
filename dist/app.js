@@ -19,16 +19,12 @@ const fetchRssFeed_1 = require("./fetchers/fetchRssFeed");
 const insertAtricle_1 = require("./insertAtricle");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
-// Middleware (optional, e.g., for JSON parsing)
 app.use(express_1.default.json());
-// Basic route for testing
 app.get("/", (req, res) => {
     res.send("RSS Feed Fetcher is running!");
 });
-// Start the Express server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    // Cron job to fetch articles every 10 minutes
     console.log("Cron ready to run");
     node_cron_1.default.schedule("*/10 * * * *", () => {
         console.log("Running scheduled task to fetch articles...");
