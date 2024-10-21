@@ -11,27 +11,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.saveArticles = saveArticles;
 const database_1 = require("./database");
-function insertArticle(article) {
+function insertArticles(articles) {
     return __awaiter(this, void 0, void 0, function* () {
+        if (articles.length === 0)
+            return;
+        const values = articles.map((article) => [
+            article.title,
+            article.description,
+            article.image,
+            article.link,
+            new Date(article.pubDate),
+            article.source,
+            article.category,
+        ]);
         const query = `
-      CALL insert_article(?,?,?,?,?,?,?);
-    `;
+    INSERT IGNORE INTO articles (title, description, image_url, article_url, published_at, source_id, category_id)
+    VALUES ?
+  `;
         return new Promise((resolve, reject) => {
-            database_1.database.execute(query, [
-                article.title,
-                article.description,
-                article.image,
-                article.link,
-                new Date(article.pubDate),
-                article.source,
-                article.category,
-            ], (err, results) => {
+            database_1.database.query(query, [values], (err, results) => {
                 if (err) {
-                    console.error("Failed to insert article:", err);
-                    return reject(err);
+                    return reject(err.errno);
                 }
                 const r = results;
-                console.log(r[0][0].status);
+                console.log(`Inserted ${r.affectedRows} articles.`);
                 resolve();
             });
         });
@@ -39,15 +42,11 @@ function insertArticle(article) {
 }
 function saveArticles(articles) {
     return __awaiter(this, void 0, void 0, function* () {
-        for (const article of articles) {
-            try {
-                if (article.title && article.link) {
-                    yield insertArticle(article);
-                }
-            }
-            catch (error) {
-                console.error("Error inserting article:", error);
-            }
+        try {
+            yield insertArticles(articles);
+        }
+        catch (error) {
+            console.error("Error inserting article:", error);
         }
     });
 }

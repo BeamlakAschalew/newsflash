@@ -1,46 +1,40 @@
 import { database } from "./database";
 import { Article } from "./types";
 
-async function insertArticle(article: Article): Promise<void> {
+async function insertArticles(articles: Article[]): Promise<void> {
+  if (articles.length === 0) return;
+
+  const values = articles.map((article) => [
+    article.title,
+    article.description,
+    article.image,
+    article.link,
+    new Date(article.pubDate),
+    article.source,
+    article.category,
+  ]);
+
   const query = `
-      CALL insert_article(?,?,?,?,?,?,?);
-    `;
+    INSERT IGNORE INTO articles (title, description, image_url, article_url, published_at, source_id, category_id)
+    VALUES ?
+  `;
 
   return new Promise((resolve, reject) => {
-    database.execute(
-      query,
-      [
-        article.title,
-        article.description,
-        article.image,
-        article.link,
-        new Date(article.pubDate),
-        article.source,
-        article.category,
-      ],
-      (err, results) => {
-        if (err) {
-          console.error("Failed to insert article:", err);
-          return reject(err);
-        }
-        const r = results as any;
-
-        console.log(r[0][0].status);
-
-        resolve();
+    database.query(query, [values], (err, results) => {
+      if (err) {
+        return reject(err.errno);
       }
-    );
+      const r = results as any;
+      console.log(`Inserted ${r.affectedRows} articles.`);
+      resolve();
+    });
   });
 }
 
 export async function saveArticles(articles: Article[]): Promise<void> {
-  for (const article of articles) {
-    try {
-      if (article.title && article.link) {
-        await insertArticle(article);
-      }
-    } catch (error) {
-      console.error("Error inserting article:", error);
-    }
+  try {
+    await insertArticles(articles);
+  } catch (error) {
+    console.error("Error inserting article:", error);
   }
 }

@@ -10,7 +10,7 @@ const poolConfig: mysql.PoolOptions = {
   database: process.env.DATABASE_NAME,
   password: process.env.DATABASE_PASSWORD,
   waitForConnections: true,
-  connectionLimit: 0,
+  connectionLimit: 10000,
   maxIdle: 10,
   idleTimeout: 60000,
   queueLimit: 0,
