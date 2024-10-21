@@ -16,20 +16,20 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log("Cron ready to run");
-  // cron.schedule("*/10 * * * *", () => {
-  console.log("Running scheduled task to fetch articles...");
-  sourceCategories.forEach(async (source) => {
-    console.log(
-      `Fetching feed from ${source.url}, Category: ${source.category_id}, Source: ${source.source_id}`
-    );
+  cron.schedule("*/10 * * * *", () => {
+    console.log("Running scheduled task to fetch articles...");
+    sourceCategories.forEach(async (source) => {
+      console.log(
+        `Fetching feed from ${source.url}, Category: ${source.category_id}, Source: ${source.source_id}`
+      );
 
-    try {
-      const articles = await fetchRssFeed(source);
-      console.log(`Fetched ${articles.length} articles from ${source.url}`);
-      await saveArticles(articles);
-    } catch (error) {
-      console.error(`Error fetching articles from ${source.url}:`, error);
-    }
+      try {
+        const articles = await fetchRssFeed(source);
+        console.log(`Fetched ${articles.length} articles from ${source.url}`);
+        await saveArticles(articles);
+      } catch (error) {
+        console.error(`Error fetching articles from ${source.url}:`, error);
+      }
+    });
   });
-  // });
 });
