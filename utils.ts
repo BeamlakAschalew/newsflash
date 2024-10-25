@@ -4,5 +4,5 @@ export const parseDate = (dateString: string): string => {
 };
 
 export const removeHtmlTags = (input: string): string => {
-  return input.replace(/<[^>]*>/g, "");
+  return input.replace(/<[^>]*>/g, "").trim();
 };
