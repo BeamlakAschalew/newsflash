@@ -19,7 +19,14 @@ const parsers_1 = require("../parsers");
 function fetchRssFeed(source) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield axios_1.default.get(source.url);
+            const response = yield axios_1.default.get(source.url, {
+                headers: {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+                    Accept: "application/rss+xml, application/xml, text/xml",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Cache-Control": "no-cache",
+                },
+            });
             const xmlData = response.data;
             const result = yield (0, xml2js_1.parseStringPromise)(xmlData);
             const parserKey = Object.keys(parsers_1.parsers).find((key) => source.url.includes(key));

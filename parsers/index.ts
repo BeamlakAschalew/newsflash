@@ -240,6 +240,144 @@ const parseETOnline = (result: any, source: SourceCategory): Article[] => {
   }));
 };
 
+const parseESPNFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item.image?.[0] || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseFinancialPost = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseFootItalia = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item.image?.[0]?.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseFortuneFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item || [];
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseFourFourTwoFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null, // Adjusting for media content URL
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseFoxSportsFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null, // Using media content URL for image
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseHackerNewsFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseIGNFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image:
+      item["media:thumbnail"]?.[0] ||
+      item["media:thumbnail"]?.[0]?.$.url ||
+      null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseIndependentFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
 export const parsers: Record<
   string,
   (result: any, source: SourceCategory) => Article[]
@@ -260,4 +398,13 @@ export const parsers: Record<
   "cbssports.com": parseCBSSports,
   "engadget.com": parseEngadget,
   "etonline.com": parseETOnline,
+  "espn.com": parseESPNFeed,
+  "financialpost.com": parseFinancialPost,
+  "footitalia.com": parseFootItalia,
+  "fortune.com": parseFortuneFeed,
+  "fourfourtwo.com": parseFourFourTwoFeed,
+  "foxsports.com": parseFoxSportsFeed,
+  "news.ycombinator.com": parseHackerNewsFeed,
+  "feeds.feedburner.com/": parseIGNFeed,
+  "independent.co.uk": parseIndependentFeed,
 };

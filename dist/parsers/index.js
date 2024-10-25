@@ -268,6 +268,152 @@ const parseETOnline = (result, source) => {
         });
     });
 };
+const parseESPNFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_d = item.image) === null || _d === void 0 ? void 0 : _d[0]) || null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseFinancialPost = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item["media:content"]) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.$.url) || null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseFootItalia = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item.image) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.url) || null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseFortuneFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = ((_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item) || [];
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item["media:content"]) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.$.url) || null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseFourFourTwoFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item["media:content"]) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.$.url) || null, // Adjusting for media content URL
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseFoxSportsFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item["media:content"]) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.$.url) || null, // Using media content URL for image
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseHackerNewsFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseIGNFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e, _f;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_d = item["media:thumbnail"]) === null || _d === void 0 ? void 0 : _d[0]) ||
+                ((_f = (_e = item["media:thumbnail"]) === null || _e === void 0 ? void 0 : _e[0]) === null || _f === void 0 ? void 0 : _f.$.url) ||
+                null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
+const parseIndependentFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = (_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item;
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item["media:content"]) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.$.url) || null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
 exports.parsers = {
     "bbci.co.uk": parseBBC,
     "rss.cnn.com": parseCNN,
@@ -285,4 +431,13 @@ exports.parsers = {
     "cbssports.com": parseCBSSports,
     "engadget.com": parseEngadget,
     "etonline.com": parseETOnline,
+    "espn.com": parseESPNFeed,
+    "financialpost.com": parseFinancialPost,
+    "footitalia.com": parseFootItalia,
+    "fortune.com": parseFortuneFeed,
+    "fourfourtwo.com": parseFourFourTwoFeed,
+    "foxsports.com": parseFoxSportsFeed,
+    "news.ycombinator.com": parseHackerNewsFeed,
+    "feeds.feedburner.com/": parseIGNFeed,
+    "independent.co.uk": parseIndependentFeed,
 };

@@ -343,11 +343,6 @@ exports.sourceCategories = [
         source_id: 11,
     },
     {
-        url: "https://www.buzzfeed.com/usnews.xml",
-        category_id: 10,
-        source_id: 11,
-    },
-    {
         url: "https://www.buzzfeed.com/quiz.xml",
         category_id: 10,
         source_id: 11,
@@ -576,5 +571,290 @@ exports.sourceCategories = [
         url: "https://www.etonline.com/movies/rss",
         category_id: 10,
         source_id: 16,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/nfl/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/nba/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/mlb/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/nhl/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/rpm/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/soccer/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://www.espn.com/espn/rss/espnu/news",
+        category_id: 11,
+        source_id: 17,
+    },
+    {
+        url: "https://financialpost.com/feed",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/news/economy/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/commodities/energy/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/commodities/mining/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/real-estate/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/fp-finance/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/fp-work/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/wealth/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/investing/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/executive/executive-women/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/financial-times/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://financialpost.com/category/personal-finance/business-essentials/feed.xml",
+        category_id: 3,
+        source_id: 18,
+    },
+    {
+        url: "https://www.footitalia.com/feed/",
+        category_id: 11,
+        source_id: 19,
+    },
+    {
+        url: "https://fortune.com/feed/fortune-feeds/?id=3230629",
+        category_id: 3,
+        source_id: 20,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/mlb",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/nfl",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/nba",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/nhl",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/ufc",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/indycar,fs/formula-1",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/korn-ferry-tour,fs/lpga-tour,fs/pga-tour",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/soccer,soccer/epl/league/1,soccer/mls/league/5,soccer/ucl/league/7,soccer/europa/league/8,soccer/wc/league/12,soccer/euro/league/13,soccer/wwc/league/14,soccer/nwsl/league/20,soccer/cwc/league/26,soccer/gold_cup/league/32,soccer/unl/league/67",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=soccer/wc/league/12",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=soccer/wc/league/14",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/winter,fs/summer",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/atp,fs/wta",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/wnba",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=50&tags=fs/wwe",
+        category_id: 11,
+        source_id: 22,
+    },
+    {
+        url: "https://feeds.feedburner.com/ign/all",
+        category_id: 10,
+        source_id: 24,
+    },
+    {
+        url: "https://feeds.feedburner.com/ign/videos",
+        category_id: 10,
+        source_id: 24,
+    },
+    {
+        url: "https://feeds.feedburner.com/ign/news",
+        category_id: 10,
+        source_id: 24,
+    },
+    {
+        url: "https://feeds.feedburner.com/ign/video-news",
+        category_id: 10,
+        source_id: 24,
+    },
+    {
+        url: "https://feeds.feedburner.com/ign/reviews",
+        category_id: 10,
+        source_id: 24,
+    },
+    {
+        url: "https://feeds.feedburner.com/ign/video-reviews",
+        category_id: 10,
+        source_id: 24,
+    },
+    {
+        url: "https://www.independent.co.uk/news/world/rss",
+        category_id: 1,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/news/business/rss",
+        category_id: 3,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/news/science/rss",
+        category_id: 8,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/news/education/rss",
+        category_id: 7,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/environment/rss",
+        category_id: 14,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/sport/rss",
+        category_id: 11,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/sport/general/athletics/rss",
+        category_id: 11,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/sport/football/rss",
+        category_id: 11,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/sport/golf/rss",
+        category_id: 11,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/sport/motor-racing/rss",
+        category_id: 11,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/life-style/rss",
+        category_id: 4,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/arts-entertainment/rss",
+        category_id: 10,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/travel/rss",
+        category_id: 12,
+        source_id: 25,
+    },
+    {
+        url: "https://www.independent.co.uk/money/rss",
+        category_id: 3,
+        source_id: 25,
     },
 ];
