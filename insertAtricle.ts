@@ -1,12 +1,13 @@
 import { database } from "./database";
 import { Article } from "./types";
+import { removeHtmlTags } from "./utils";
 
 async function insertArticles(articles: Article[]): Promise<void> {
   if (articles.length === 0) return;
 
   const values = articles.map((article) => [
-    article.title,
-    article.description,
+    removeHtmlTags(article.title),
+    removeHtmlTags(article.description),
     article.image,
     article.link,
     new Date(article.pubDate),

@@ -11,13 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.saveArticles = saveArticles;
 const database_1 = require("./database");
+const utils_1 = require("./utils");
 function insertArticles(articles) {
     return __awaiter(this, void 0, void 0, function* () {
         if (articles.length === 0)
             return;
         const values = articles.map((article) => [
-            article.title,
-            article.description,
+            (0, utils_1.removeHtmlTags)(article.title),
+            (0, utils_1.removeHtmlTags)(article.description),
             article.image,
             article.link,
             new Date(article.pubDate),
