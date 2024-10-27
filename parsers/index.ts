@@ -378,6 +378,57 @@ const parseIndependentFeed = (
   }));
 };
 
+const parseMashableFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => {
+    let image = null;
+    const contentEncoded = item["content:encoded"]?.[0] || "";
+    const imgTagMatch = contentEncoded.match(/<img[^>]+src="([^"]+)"/);
+    if (imgTagMatch) {
+      image = imgTagMatch[1];
+    }
+
+    return {
+      title: item.title?.[0] || null,
+      pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+      description: item.description?.[0] || null,
+      link: item.link?.[0] || null,
+      image,
+      source: source.source_id,
+      category: source.category_id,
+    };
+  });
+};
+
+const parseCNBCFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseNBCFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
 export const parsers: Record<
   string,
   (result: any, source: SourceCategory) => Article[]
@@ -407,4 +458,7 @@ export const parsers: Record<
   "news.ycombinator.com": parseHackerNewsFeed,
   "feeds.feedburner.com/": parseIGNFeed,
   "independent.co.uk": parseIndependentFeed,
+  "mashable.com": parseMashableFeed,
+  "cnbc.com": parseCNBCFeed,
+  "nbcnews.com": parseNBCFeed,
 };
