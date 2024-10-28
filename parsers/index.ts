@@ -429,6 +429,229 @@ const parseNBCFeed = (result: any, source: SourceCategory): Article[] => {
   }));
 };
 
+const parseNewScientistFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:thumbnail"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseNYMagFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => {
+    const description = item.description?.[0] || null;
+    const imageMatch = description?.match(/<img src="(.*?)"/);
+    const imageUrl = imageMatch ? imageMatch[1] : null;
+
+    return {
+      title: item.title?.[0] || null,
+      pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+      description,
+      link: item.link?.[0] || null,
+      image: imageUrl,
+      source: source.source_id,
+      category: source.category_id,
+    };
+  });
+};
+
+const parseNextBigFutureFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => {
+    const description = item.description?.[0] || null;
+    const imageMatch = description?.match(/<img src="(.*?)"/);
+    const imageUrl = imageMatch ? imageMatch[1] : null;
+
+    return {
+      title: item.title?.[0] || null,
+      pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+      description,
+      link: item.link?.[0] || null,
+      image: imageUrl,
+      source: source.source_id,
+      category: source.category_id,
+    };
+  });
+};
+
+const parseVoxFeed = (result: any, source: SourceCategory): Article[] => {
+  const entries = result?.feed?.entry;
+
+  return entries.map((entry: any) => {
+    const contentHtml = entry.content?.[0]?._ || "";
+    const imageMatch = contentHtml.match(/<img[^>]+src="([^">]+)"/);
+    const imageUrl = imageMatch ? imageMatch[1] : null;
+
+    return {
+      title: entry.title?.[0]?._ || null,
+      pubDate: entry.published ? parseDate(entry.published[0]) : null,
+      description: entry.summary?.[0]?._ || null,
+      link:
+        entry.link?.find((link: any) => link.$.rel === "alternate")?.$.href ||
+        null,
+      image: imageUrl,
+      source: source.source_id,
+      category: source.category_id,
+    };
+  });
+};
+
+const parseReutersFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item || [];
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image:
+      item["content:encoded"]?.[0]?.match(/<img[^>]+src="([^">]+)"/)?.[1] ||
+      null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseTechCrunchFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item || [];
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    image: null,
+    link: item.link?.[0] || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseTechRadarFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseNextWebFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item.enclosure?.[0]?.$.url || null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseTheVergeFeed = (result: any, source: SourceCategory): Article[] => {
+  function parseContent(content: any): {
+    imageUrl: string | null;
+    truncatedContent: string;
+  } {
+    const imageUrlMatch = content.match(/<img[^>]*src="([^"]+)"/);
+    const imageUrl = imageUrlMatch ? imageUrlMatch[1] : null;
+
+    const textContent = content.replace(/<[^>]+>/g, "");
+
+    const sentences = textContent.match(/[^.!?]+[.!?]/g) || [];
+
+    const truncatedContent = sentences.slice(0, 2).join(" ");
+
+    return { imageUrl, truncatedContent };
+  }
+
+  const entries = result?.feed?.entry || [];
+
+  return entries.map((entry: any) => {
+    return {
+      title: entry.title?.[0] || null,
+      pubDate: entry.published ? parseDate(entry.published[0]) : null,
+      description: parseContent(entry.content?.[0]._).truncatedContent || null,
+      link: entry.link?.[0]?.$.href || null,
+      image: parseContent(entry.content?.[0]._).imageUrl,
+      source: source.source_id,
+      category: source.category_id,
+    };
+  });
+};
+
+const parseWSJFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item || [];
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null, // Access the media content URL
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseWashingtonPosrFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item || [];
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
+const parseWashingtonTimesFeed = (
+  result: any,
+  source: SourceCategory
+): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item || [];
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item["media:content"]?.[0]?.$.url || null, // Use media:content URL for image
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
 export const parsers: Record<
   string,
   (result: any, source: SourceCategory) => Article[]
@@ -461,4 +684,17 @@ export const parsers: Record<
   "mashable.com": parseMashableFeed,
   "cnbc.com": parseCNBCFeed,
   "nbcnews.com": parseNBCFeed,
+  "newscientist.com": parseNewScientistFeed,
+  "nymag.com": parseNYMagFeed,
+  "nextbigfuture.com": parseNextBigFutureFeed,
+  "vox.com": parseVoxFeed,
+  "reutersagency.com": parseReutersFeed,
+  "techcrunch.com": parseTechCrunchFeed,
+  "techradar.com": parseTechRadarFeed,
+  "thenextweb.com": parseNextWebFeed,
+  // TODO: not working
+  "theverge.com": parseTheVergeFeed,
+  "dowjones.io": parseWSJFeed,
+  "washingtonpost.com": parseWashingtonPosrFeed,
+  "washingtontimes.com": parseWashingtonTimesFeed,
 };

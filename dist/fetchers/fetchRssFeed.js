@@ -41,7 +41,7 @@ function fetchRssFeed(source) {
             }
         }
         catch (error) {
-            console.log("Error fetching or parsing the RSS feed:");
+            console.log("Error fetching or parsing the RSS feed: " + error);
             return [];
         }
     });

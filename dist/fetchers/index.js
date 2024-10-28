@@ -982,4 +982,529 @@ exports.sourceCategories = [
         category_id: 9,
         source_id: 28,
     },
+    {
+        url: "https://www.newscientist.com/feed/home/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/section/news/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/section/features/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/physics/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/technology/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/space/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/life/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/earth/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/health/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "https://www.newscientist.com/subject/humans/feed/",
+        category_id: 8,
+        source_id: 29,
+    },
+    {
+        url: "http://www.nymag.com/rss/Arts_and_Culture.xml",
+        category_id: 16,
+        source_id: 30,
+    },
+    {
+        url: "http://www.nymag.com/rss/Business_and_Money.xml",
+        category_id: 3,
+        source_id: 30,
+    },
+    {
+        url: "http://www.nymag.com/rss/Politics.xml",
+        category_id: 5,
+        source_id: 30,
+    },
+    {
+        url: "http://www.nymag.com/rss/Sports.xml",
+        category_id: 11,
+        source_id: 30,
+    },
+    {
+        url: "http://www.nymag.com/rss/Tech.xml",
+        category_id: 9,
+        source_id: 30,
+    },
+    {
+        url: "http://www.nymag.com/rss/Travel.xml",
+        category_id: 12,
+        source_id: 30,
+    },
+    {
+        url: "https://www.nextbigfuture.com/feed",
+        category_id: 9,
+        source_id: 31,
+    },
+    {
+        url: "https://www.vox.com/rss/index.xml",
+        category_id: 1,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/explainers/index.xml",
+        category_id: 1,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/politics/index.xml",
+        category_id: 5,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/culture/index.xml",
+        category_id: 16,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/advice/index.xml",
+        category_id: 1,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/science/index.xml",
+        category_id: 8,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/technology/index.xml",
+        category_id: 9,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/climate/index.xml",
+        category_id: 14,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/health/index.xml",
+        category_id: 6,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/money/index.xml",
+        category_id: 3,
+        source_id: 32,
+    },
+    {
+        url: "https://platform.vox.com/rss/life/index.xml",
+        category_id: 4,
+        source_id: 32,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best",
+        category_id: 1,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=business-finance&post_type=best",
+        category_id: 3,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=deals&post_type=best",
+        category_id: 3,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=political-general&post_type=best",
+        category_id: 5,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=environment&post_type=best",
+        category_id: 14,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=tech&post_type=best",
+        category_id: 9,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=health&post_type=best",
+        category_id: 6,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=sports&post_type=best",
+        category_id: 11,
+        source_id: 33,
+    },
+    {
+        url: "https://www.reutersagency.com/feed/?best-topics=lifestyle-entertainment&post_type=best",
+        category_id: 10,
+        source_id: 33,
+    },
+    {
+        url: "https://techcrunch.com/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://techcrunch.com/category/startups/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://techcrunch.com/category/venture/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://techcrunch.com/tag/apple/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://techcrunch.com/category/security/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://techcrunch.com/category/artificial-intelligence/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://techcrunch.com/category/apps/feed/",
+        category_id: 9,
+        source_id: 34,
+    },
+    {
+        url: "https://www.techradar.com/feeds.xml",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/articletype/news",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/articletype/review",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/articletype/best",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/articletype/deals",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/articletype/feature",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/articletype/opinion",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/phones",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/televisions",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/entertainment",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/health-fitness",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/computing",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/computing-components",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/smart-home",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/gaming",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/audio",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/home-cinema",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/internet",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/cameras",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/software",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://www.techradar.com/feeds/tag/home",
+        category_id: 9,
+        source_id: 35,
+    },
+    {
+        url: "https://thenextweb.com/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/latest/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/deep-tech/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/sustainability/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/ecosystems/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/data-security/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/fintech-ecommerce/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/future-of-work/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/plugged/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/corporates-innovation/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://thenextweb.com/startups-technology/feed",
+        category_id: 9,
+        source_id: 36,
+    },
+    {
+        url: "https://www.theverge.com/rss/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://www.theverge.com/rss/tech/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://www.theverge.com/rss/reviews/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://www.theverge.com/rss/science/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://www.theverge.com/rss/entertainment/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://www.theverge.com/rss/cars/index.xml",
+        category_id: 9,
+        source_id: 37,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+        category_id: 1,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+        category_id: 9,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/RSSLifestyle",
+        category_id: 4,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/socialpoliticsfeed",
+        category_id: 5,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/RSSArtsCulture",
+        category_id: 16,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/socialhealth",
+        category_id: 6,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/rsssportsfeed",
+        category_id: 11,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+        category_id: 3,
+        source_id: 38,
+    },
+    {
+        url: "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+        category_id: 3,
+        source_id: 38,
+    },
+    {
+        url: "https://www.washingtonpost.com/arcio/rss/category/politics/",
+        category_id: 5,
+        source_id: 39,
+    },
+    {
+        url: "http://feeds.washingtonpost.com/rss/sports/",
+        category_id: 11,
+        source_id: 39,
+    },
+    {
+        url: "http://feeds.washingtonpost.com/rss/business/technology/",
+        category_id: 9,
+        source_id: 39,
+    },
+    {
+        url: "http://feeds.washingtonpost.com/rss/world/",
+        category_id: 1,
+        source_id: 39,
+    },
+    {
+        url: "http://feeds.washingtonpost.com/rss/business/",
+        category_id: 3,
+        source_id: 39,
+    },
+    {
+        url: "http://feeds.washingtonpost.com/rss/lifestyle/",
+        category_id: 4,
+        source_id: 39,
+    },
+    {
+        url: "http://feeds.washingtonpost.com/rss/entertainment/",
+        category_id: 10,
+        source_id: 39,
+    },
+    {
+        url: "https://www.washingtontimes.com/rss/headlines/news/",
+        category_id: 1,
+        source_id: 40,
+    },
+    {
+        url: "https://www.washingtontimes.com/rss/headlines/sports/",
+        category_id: 11,
+        source_id: 40,
+    },
+    {
+        url: "https://www.washingtontimes.com/rss/headlines/culture/entertainment/",
+        category_id: 10,
+        source_id: 40,
+    },
+    {
+        url: "https://www.washingtontimes.com/rss/headlines/culture/health/",
+        category_id: 6,
+        source_id: 40,
+    },
+    {
+        url: "https://www.washingtontimes.com/rss/headlines/culture/technology/",
+        category_id: 9,
+        source_id: 40,
+    },
+    {
+        url: "https://www.washingtontimes.com/rss/headlines/culture/travel/",
+        category_id: 12,
+        source_id: 40,
+    },
 ];

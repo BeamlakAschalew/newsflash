@@ -31,7 +31,7 @@ async function fetchRssFeed(source: SourceCategory): Promise<Article[]> {
       throw new Error("No parser found for this URL");
     }
   } catch (error) {
-    console.log("Error fetching or parsing the RSS feed:");
+    console.log("Error fetching or parsing the RSS feed: " + error);
     return [];
   }
 }
