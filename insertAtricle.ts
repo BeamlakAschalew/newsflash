@@ -9,7 +9,7 @@ async function insertArticles(articles: Article[]): Promise<void> {
     removeHtmlTags(article.title),
     removeHtmlTags(article.description),
     article.image,
-    article.link,
+    article.link.trim(),
     new Date(article.pubDate),
     article.source,
     article.category,
@@ -20,7 +20,7 @@ async function insertArticles(articles: Article[]): Promise<void> {
   return new Promise((resolve, reject) => {
     database.query(query, [values], (err, results) => {
       if (err) {
-        return reject(err.errno);
+        return reject(err.code);
       }
       const r = results as any;
       console.log(`Inserted ${r.affectedRows} articles.`);

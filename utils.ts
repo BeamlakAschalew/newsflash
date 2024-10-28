@@ -3,6 +3,9 @@ export const parseDate = (dateString: string): string => {
   return date.toISOString();
 };
 
-export const removeHtmlTags = (input: string): string => {
+export const removeHtmlTags = (
+  input: string | null | undefined
+): string | null => {
+  if (input == null) return null;
   return input.replace(/<[^>]*>/g, "").trim();
 };

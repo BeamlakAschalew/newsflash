@@ -2,8 +2,9 @@ import axios from "axios";
 import { parseStringPromise } from "xml2js";
 import { parsers } from "../parsers";
 import { Article, SourceCategory } from "../types";
+import { sourceCategories } from ".";
 
-export async function fetchRssFeed(source: SourceCategory): Promise<Article[]> {
+async function fetchRssFeed(source: SourceCategory): Promise<Article[]> {
   try {
     const response = await axios.get(source.url, {
       headers: {
@@ -30,7 +31,30 @@ export async function fetchRssFeed(source: SourceCategory): Promise<Article[]> {
       throw new Error("No parser found for this URL");
     }
   } catch (error) {
-    console.log("Error fetching or parsing the RSS feed:", error);
+    console.log("Error fetching or parsing the RSS feed:");
     return [];
   }
+}
+
+export async function fetchAll(): Promise<Article[]> {
+  const articles: Article[] = [];
+
+  const fetchPromises = sourceCategories.map(async (source) => {
+    console.log(
+      `Fetching feed from ${source.url}, Category: ${source.category_id}, Source: ${source.source_id}`
+    );
+
+    try {
+      const articlesInner = await fetchRssFeed(source);
+      console.log(
+        `Fetched ${articlesInner.length} articles from ${source.url}`
+      );
+      articles.push(...articlesInner);
+    } catch (error) {
+      console.error(`Error fetching articles from ${source.url}:`, error);
+    }
+  });
+
+  await Promise.all(fetchPromises);
+  return articles;
 }

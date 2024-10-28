@@ -1,8 +1,7 @@
 import express from "express";
 import cron from "node-cron";
-import { sourceCategories } from "./fetchers";
-import { fetchRssFeed } from "./fetchers/fetchRssFeed";
 import { saveArticles } from "./insertAtricle";
+import { fetchAll } from "./fetchers/fetchRssFeed";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,23 +12,34 @@ app.get("/", (req, res) => {
   res.send("RSS Feed Fetcher is running!");
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log("Cron ready to run");
-  cron.schedule("*/10 * * * *", () => {
+  cron.schedule("*/10 * * * *", async () => {
     console.log("Running scheduled task to fetch articles...");
-    sourceCategories.forEach(async (source) => {
-      console.log(
-        `Fetching feed from ${source.url}, Category: ${source.category_id}, Source: ${source.source_id}`
-      );
+    try {
+      const articles = await fetchAll();
+      console.log(`Fetched a total of ${articles.length} articles`);
+      const batchSize = 250;
 
-      try {
-        const articles = await fetchRssFeed(source);
-        console.log(`Fetched ${articles.length} articles from ${source.url}`);
-        await saveArticles(articles);
-      } catch (error) {
-        console.error(`Error fetching articles from ${source.url}:`, error);
+      function partitionArray<T>(array: T[], size: number): T[][] {
+        const result: T[][] = [];
+        for (let i = 0; i < array.length; i += size) {
+          result.push(array.slice(i, i + size));
+        }
+        return result;
       }
-    });
+
+      const articleBatches = partitionArray(articles, batchSize);
+
+      for (const batch of articleBatches) {
+        await saveArticles(batch);
+        console.log(`Inserted batch of ${batch.length} articles.`);
+      }
+
+      console.log("All articles have been saved.");
+    } catch (error) {
+      console.error(`Error fetching articles ${error}:`);
+    }
   });
 });
