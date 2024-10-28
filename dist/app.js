@@ -14,30 +14,39 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const node_cron_1 = __importDefault(require("node-cron"));
-const fetchers_1 = require("./fetchers");
-const fetchRssFeed_1 = require("./fetchers/fetchRssFeed");
 const insertAtricle_1 = require("./insertAtricle");
+const fetchRssFeed_1 = require("./fetchers/fetchRssFeed");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 app.use(express_1.default.json());
 app.get("/", (req, res) => {
     res.send("RSS Feed Fetcher is running!");
 });
-app.listen(PORT, () => {
+app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is running on http://localhost:${PORT}`);
     console.log("Cron ready to run");
-    node_cron_1.default.schedule("*/10 * * * *", () => {
+    node_cron_1.default.schedule("*/10 * * * *", () => __awaiter(void 0, void 0, void 0, function* () {
         console.log("Running scheduled task to fetch articles...");
-        fetchers_1.sourceCategories.forEach((source) => __awaiter(void 0, void 0, void 0, function* () {
-            console.log(`Fetching feed from ${source.url}, Category: ${source.category_id}, Source: ${source.source_id}`);
-            try {
-                const articles = yield (0, fetchRssFeed_1.fetchRssFeed)(source);
-                console.log(`Fetched ${articles.length} articles from ${source.url}`);
-                yield (0, insertAtricle_1.saveArticles)(articles);
+        try {
+            const articles = yield (0, fetchRssFeed_1.fetchAll)();
+            console.log(`Fetched a total of ${articles.length} articles`);
+            const batchSize = 250;
+            function partitionArray(array, size) {
+                const result = [];
+                for (let i = 0; i < array.length; i += size) {
+                    result.push(array.slice(i, i + size));
+                }
+                return result;
             }
-            catch (error) {
-                console.error(`Error fetching articles from ${source.url}:`, error);
+            const articleBatches = partitionArray(articles, batchSize);
+            for (const batch of articleBatches) {
+                yield (0, insertAtricle_1.saveArticles)(batch);
+                console.log(`Inserted batch of ${batch.length} articles.`);
             }
-        }));
-    });
-});
+            console.log("All articles have been saved.");
+        }
+        catch (error) {
+            console.error(`Error fetching articles ${error}:`);
+        }
+    }));
+}));

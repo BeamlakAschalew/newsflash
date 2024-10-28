@@ -857,4 +857,129 @@ exports.sourceCategories = [
         category_id: 3,
         source_id: 25,
     },
+    {
+        url: "https://mashable.com/feeds/rss/all",
+        category_id: 10,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/tech",
+        category_id: 9,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/science",
+        category_id: 8,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/life",
+        category_id: 4,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/social-good",
+        category_id: 4,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/entertainment",
+        category_id: 10,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/games",
+        category_id: 10,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/movies",
+        category_id: 10,
+        source_id: 26,
+    },
+    {
+        url: "https://mashable.com/feeds/rss/tv-shows",
+        category_id: 10,
+        source_id: 26,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+        category_id: 2,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362",
+        category_id: 1,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147",
+        category_id: 3,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839135",
+        category_id: 3,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258",
+        category_id: 3,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664",
+        category_id: 3,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910",
+        category_id: 9,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000113",
+        category_id: 5,
+        source_id: 27,
+    },
+    {
+        url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000108",
+        category_id: 6,
+        source_id: 27,
+    },
+    {
+        url: "https://feeds.nbcnews.com/nbcnews/public/news",
+        category_id: 1,
+        source_id: 28,
+    },
+    {
+        url: "http://feeds.nbcnews.com/feeds/topstories",
+        category_id: 2,
+        source_id: 28,
+    },
+    {
+        url: "https://feeds.nbcnews.com/nbcnews/public/politics",
+        category_id: 5,
+        source_id: 28,
+    },
+    {
+        url: "https://feeds.nbcnews.com/nbcnews/public/health",
+        category_id: 6,
+        source_id: 28,
+    },
+    {
+        url: "https://feeds.nbcnews.com/nbcnews/public/science",
+        category_id: 8,
+        source_id: 28,
+    },
+    {
+        url: "https://feeds.nbcnews.com/today/public/popculture",
+        category_id: 10,
+        source_id: 28,
+    },
+    {
+        url: "https://feeds.nbcnews.com/nbcnews/public/tech",
+        category_id: 9,
+        source_id: 28,
+    },
 ];

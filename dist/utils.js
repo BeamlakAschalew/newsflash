@@ -7,6 +7,8 @@ const parseDate = (dateString) => {
 };
 exports.parseDate = parseDate;
 const removeHtmlTags = (input) => {
+    if (input == null)
+        return null;
     return input.replace(/<[^>]*>/g, "").trim();
 };
 exports.removeHtmlTags = removeHtmlTags;

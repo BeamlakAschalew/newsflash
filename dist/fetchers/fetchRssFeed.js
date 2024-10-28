@@ -12,10 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchRssFeed = fetchRssFeed;
+exports.fetchAll = fetchAll;
 const axios_1 = __importDefault(require("axios"));
 const xml2js_1 = require("xml2js");
 const parsers_1 = require("../parsers");
+const _1 = require(".");
 function fetchRssFeed(source) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -40,8 +41,26 @@ function fetchRssFeed(source) {
             }
         }
         catch (error) {
-            console.log("Error fetching or parsing the RSS feed:", error);
+            console.log("Error fetching or parsing the RSS feed:");
             return [];
         }
+    });
+}
+function fetchAll() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const articles = [];
+        const fetchPromises = _1.sourceCategories.map((source) => __awaiter(this, void 0, void 0, function* () {
+            console.log(`Fetching feed from ${source.url}, Category: ${source.category_id}, Source: ${source.source_id}`);
+            try {
+                const articlesInner = yield fetchRssFeed(source);
+                console.log(`Fetched ${articlesInner.length} articles from ${source.url}`);
+                articles.push(...articlesInner);
+            }
+            catch (error) {
+                console.error(`Error fetching articles from ${source.url}:`, error);
+            }
+        }));
+        yield Promise.all(fetchPromises);
+        return articles;
     });
 }
