@@ -652,6 +652,20 @@ const parseWashingtonTimesFeed = (
   }));
 };
 
+const parseSkySportsFeed = (result: any, source: SourceCategory): Article[] => {
+  const items = result?.rss?.channel?.[0]?.item;
+
+  return items.map((item: any) => ({
+    title: item.title?.[0] || null,
+    pubDate: item.pubDate ? parseDate(item.pubDate[0]) : null,
+    description: item.description?.[0] || null,
+    link: item.link?.[0] || null,
+    image: item.enclosure ? item.enclosure[0]?.$.url : null,
+    source: source.source_id,
+    category: source.category_id,
+  }));
+};
+
 export const parsers: Record<
   string,
   (result: any, source: SourceCategory) => Article[]
@@ -697,4 +711,5 @@ export const parsers: Record<
   "dowjones.io": parseWSJFeed,
   "washingtonpost.com": parseWashingtonPosrFeed,
   "washingtontimes.com": parseWashingtonTimesFeed,
+  "skysports.com": parseSkySportsFeed,
 };
