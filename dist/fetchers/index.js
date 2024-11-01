@@ -8,11 +8,6 @@ exports.sourceCategories = [
         source_id: 1,
     },
     {
-        url: "https://feeds.bbci.co.uk/news/world/rss.xml",
-        category_id: 2,
-        source_id: 1,
-    },
-    {
         url: "https://feeds.bbci.co.uk/news/rss.xml",
         category_id: 2,
         source_id: 1,
@@ -1506,5 +1501,15 @@ exports.sourceCategories = [
         url: "https://www.washingtontimes.com/rss/headlines/culture/travel/",
         category_id: 12,
         source_id: 40,
+    },
+    {
+        url: "https://www.skysports.com/rss/12040",
+        category_id: 11,
+        source_id: 41,
+    },
+    {
+        url: "https://www.skysports.com/rss/20876",
+        category_id: 11,
+        source_id: 41,
     },
 ];
