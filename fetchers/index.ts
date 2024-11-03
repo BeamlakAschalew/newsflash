@@ -1507,8 +1507,38 @@ export const sourceCategories: SourceCategory[] = [
     source_id: 41,
   },
   {
-    url: "https://www.skysports.com/rss/20876",
-    category_id: 11,
-    source_id: 41,
+    url: "https://www.wired.com/feed/rss",
+    category_id: 2,
+    source_id: 42,
+  },
+  {
+    url: "https://www.wired.com/feed/category/business/latest/rss",
+    category_id: 3,
+    source_id: 42,
+  },
+  {
+    url: "https://www.wired.com/feed/tag/ai/latest/rss",
+    category_id: 9,
+    source_id: 42,
+  },
+  {
+    url: "https://www.wired.com/feed/category/culture/latest/rss",
+    category_id: 16,
+    source_id: 42,
+  },
+  {
+    url: "https://www.wired.com/feed/category/gear/latest/rss",
+    category_id: 9,
+    source_id: 42,
+  },
+  {
+    url: "https://www.wired.com/feed/category/science/latest/rss",
+    category_id: 8,
+    source_id: 42,
+  },
+  {
+    url: "https://www.wired.com/feed/category/ideas/latest/rss",
+    category_id: 8,
+    source_id: 42,
   },
 ];

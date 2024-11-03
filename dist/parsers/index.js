@@ -695,6 +695,22 @@ const parseSkySportsFeed = (result, source) => {
         });
     });
 };
+const parseWiredFeed = (result, source) => {
+    var _a, _b, _c;
+    const items = ((_c = (_b = (_a = result === null || result === void 0 ? void 0 : result.rss) === null || _a === void 0 ? void 0 : _a.channel) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.item) || [];
+    return items.map((item) => {
+        var _a, _b, _c, _d, _e;
+        return ({
+            title: ((_a = item.title) === null || _a === void 0 ? void 0 : _a[0]) || null,
+            pubDate: item.pubDate ? (0, utils_1.parseDate)(item.pubDate[0]) : null,
+            description: ((_b = item.description) === null || _b === void 0 ? void 0 : _b[0]) || null,
+            link: ((_c = item.link) === null || _c === void 0 ? void 0 : _c[0]) || null,
+            image: ((_e = (_d = item["media:thumbnail"]) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.$.url) || null,
+            source: source.source_id,
+            category: source.category_id,
+        });
+    });
+};
 exports.parsers = {
     "bbci.co.uk": parseBBC,
     "rss.cnn.com": parseCNN,
@@ -738,4 +754,5 @@ exports.parsers = {
     "washingtonpost.com": parseWashingtonPosrFeed,
     "washingtontimes.com": parseWashingtonTimesFeed,
     "skysports.com": parseSkySportsFeed,
+    "wired.com": parseWiredFeed,
 };
