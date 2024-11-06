@@ -25,7 +25,17 @@ function insertArticles(articles) {
             article.source,
             article.category,
         ]);
-        const query = `INSERT IGNORE INTO articles (title, description, image_url, article_url, published_at, source_id, category_id) VALUES ?`;
+        const query = `
+  INSERT INTO articles (title, description, image_url, article_url, published_at, source_id, category_id) 
+  VALUES ?
+  ON DUPLICATE KEY UPDATE 
+    title = VALUES(title),
+    description = VALUES(description),
+    image_url = VALUES(image_url),
+    article_url = VALUES(article_url),
+    published_at = VALUES(published_at),
+    source_id = VALUES(source_id),
+    category_id = VALUES(category_id)`;
         return new Promise((resolve, reject) => {
             database_1.database.query(query, [values], (err, results) => {
                 if (err) {
