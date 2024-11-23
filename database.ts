@@ -21,11 +21,11 @@ const poolConfig: mysql.PoolOptions = {
 const pool = mysql.createPool(poolConfig);
 
 pool.on("connection", function (connection) {
-  connection.query("SET time_zone = '+03:00'", (err) => {
+  connection.query("SET time_zone = '+00:00'", (err) => {
     if (err) {
       console.error("Failed to set time zone for connection:", err);
     } else {
-      console.log("Time zone set to Africa/Nairobi for connection.");
+      console.log("Time zone set to GMT+0 for connection.");
     }
   });
 });
