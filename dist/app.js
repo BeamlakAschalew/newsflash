@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is running on http://localhost:${PORT}`);
     console.log("Cron ready to run");
-    node_cron_1.default.schedule("*/10 * * * *", () => __awaiter(void 0, void 0, void 0, function* () {
+    node_cron_1.default.schedule("*/30 * * * *", () => __awaiter(void 0, void 0, void 0, function* () {
         console.log("Running scheduled task to fetch articles...");
         try {
             const articles = yield (0, fetchRssFeed_1.fetchAll)();
